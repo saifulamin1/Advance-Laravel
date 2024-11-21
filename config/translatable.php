@@ -11,9 +11,9 @@ return [
     |
     */
     'locales' => [
-        'in',
         'en',
         'fr',
+        'id',
         'es' => [
             'MX', // mexican spanish
             'CO', // colombian spanish
@@ -147,16 +147,4 @@ return [
         'prefix' => '%',
         'suffix' => '%',
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Translation Wrapper
-    |--------------------------------------------------------------------------
-    | Defines the wrapper for translations when creating multiple translations.
-    | It is set to null by default, so each locale will be model's property.
-    | If you want to wrap the translations with their respective locales inside
-    | a separate model's property, just set it here.
-    |
-     */
-    'translations_wrapper' => null,
 ];
