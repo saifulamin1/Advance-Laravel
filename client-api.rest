@@ -1,11 +1,30 @@
 ###
 GET http://127.0.0.1:8000/api/post
 
-###
+### Insert
 POST http://127.0.0.1:8000/api/post HTTP/1.1
 content-type: application/json
 
 {
     "title": "title",
     "content": "content"
+}
+
+
+### Send Post with translate
+
+POST http://127.0.0.1:8000/api/post HTTP/1.1
+content-type: application/json
+
+{
+    "langs" : {
+        "id" : {
+                "title" : "Layanan Biro Hukum",
+                "content" : "Kategori layanan yang ada di biro hukum"
+            },
+        "en" : {
+            "title" : "Legal Bureau Services",
+            "content" : "The service categories that exist in the law firm"
+        }
+    }
 }

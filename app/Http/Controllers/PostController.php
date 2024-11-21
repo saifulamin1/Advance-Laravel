@@ -16,12 +16,42 @@ class PostController extends Controller
      // 2. Menyimpan data baru
      public function store(Request $request)
      {
-         $request->validate([
-             'title' => 'required',
-             'content' => 'required',
-         ]);
- 
-         $post = Post::create($request->all());
+        $post = Post::create([
+            'en' => [
+                'title' => 'Title in English',
+                'content' => 'Description in English',
+            ],
+            'ft' => [
+                'title' => 'Title in Français',
+                'content' => 'Description en Français',
+            ],
+        ]);
+        // $request->validate([
+        //     'langs.id'       => 'required|array',
+        //     'langs.en'       => 'nullable|array',
+        //     'langs.id.title'        => 'required|string',
+        //     'langs.id.content' => 'required|string',
+        //     'langs.en.title'        => 'string|nullable',
+        //     'langs.en.content' => 'string|nullable',
+        // ]);
+
+        // $id = $request["langs"]["id"] ?? null;
+        // $en = $request["langs"]["en"] ?? null;
+        
+        // if(isset($id)){
+        //     $data["id"] = [
+        //         "title" => $request["langs"]["id"]["title"],
+        //         "content" => $request["langs"]["id"]["content"]
+        //     ];
+        // }
+        // if(isset($en)){
+        //     $data["en"] = [
+        //         "title" => $request["langs"]["en"]["title"],
+        //         "content" => $request["langs"]["en"]["content"]
+        //     ];
+        // }
+
+        // $result = Post::create($data);
          return response()->json($post, 201);
      }
  
